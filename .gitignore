@@ -1,0 +1,44 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Generated diagnostic outputs
+investment-assistant/reports/*
+!investment-assistant/reports/.gitkeep
+
+# Local SQLite/runtime state
+*.db
+*.sqlite
+*.sqlite3
+
+# iCloud conflict / duplicate copies
+* 2.py
+* 2.md
+* 2.csv
+* 2.yaml
+* 2.yml
+
+# Editor noise
+.vscode/
+.idea/

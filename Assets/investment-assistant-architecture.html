@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>投资助理系统 MVP 架构图</title>
+  <style>
+    body { margin:0; background:#020617; color:#e2e8f0; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 32px; }
+    h1 { font-size: 26px; margin: 0 0 8px; }
+    .sub { color:#94a3b8; margin-bottom: 24px; }
+    .card { border:1px solid #1e293b; border-radius:16px; background:#0f172a; padding:18px; box-shadow:0 20px 60px rgba(0,0,0,.35); }
+    svg { width:100%; height:auto; display:block; background:#020617; border-radius:12px; }
+    .label { font-size:14px; fill:#e2e8f0; font-weight:700; }
+    .small { font-size:10px; fill:#cbd5e1; }
+    .tiny { font-size:9px; fill:#94a3b8; }
+    .frontend { fill:rgba(8,51,68,.55); stroke:#22d3ee; }
+    .backend { fill:rgba(6,78,59,.55); stroke:#34d399; }
+    .db { fill:rgba(76,29,149,.55); stroke:#a78bfa; }
+    .cloud { fill:rgba(120,53,15,.45); stroke:#fbbf24; }
+    .security { fill:rgba(136,19,55,.5); stroke:#fb7185; }
+    .external { fill:rgba(30,41,59,.75); stroke:#94a3b8; }
+    .bus { fill:rgba(251,146,60,.35); stroke:#fb923c; }
+    .line { stroke:#64748b; stroke-width:1.7; fill:none; marker-end:url(#arrow); }
+    .line2 { stroke:#fb923c; stroke-width:1.7; fill:none; marker-end:url(#arrowOrange); }
+    .line3 { stroke:#fb7185; stroke-width:1.5; fill:none; stroke-dasharray:5 4; marker-end:url(#arrowRose); }
+    .boundary { fill:transparent; stroke:#334155; stroke-width:1.2; stroke-dasharray:8 5; }
+    .section { font-size:12px; fill:#94a3b8; }
+    .foot { color:#64748b; font-size:12px; margin-top:14px; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>投资助理系统 MVP 架构图</h1>
+  <div class="sub">个人持仓管理 + 股票池研究 + 市场状态识别 + 行为复盘 + 投资知识库</div>
+  <div class="card">
+  <svg viewBox="0 0 1240 860" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+      </pattern>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L9,3 z" fill="#64748b" />
+      </marker>
+      <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L9,3 z" fill="#fb923c" />
+      </marker>
+      <marker id="arrowRose" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L9,3 z" fill="#fb7185" />
+      </marker>
+    </defs>
+    <rect width="1240" height="860" fill="url(#grid)"/>
+
+    <!-- boundaries -->
+    <rect x="30" y="60" width="1180" height="160" rx="14" class="boundary"/>
+    <text x="46" y="85" class="section">输入与数据层</text>
+    <rect x="30" y="260" width="1180" height="250" rx="14" class="boundary"/>
+    <text x="46" y="285" class="section">Agent 分析层</text>
+    <rect x="30" y="550" width="1180" height="180" rx="14" class="boundary"/>
+    <text x="46" y="575" class="section">决策、风险审核与输出层</text>
+
+    <!-- input boxes -->
+    <rect x="70" y="110" width="145" height="70" rx="8" class="frontend"/>
+    <text x="92" y="140" class="label">当前持仓</text>
+    <text x="88" y="160" class="small">权重 / 成本 / 理由</text>
+
+    <rect x="245" y="110" width="145" height="70" rx="8" class="frontend"/>
+    <text x="267" y="140" class="label">操作记录</text>
+    <text x="260" y="160" class="small">买卖 / 情绪 / 复盘</text>
+
+    <rect x="420" y="110" width="145" height="70" rx="8" class="frontend"/>
+    <text x="442" y="140" class="label">股票池</text>
+    <text x="438" y="160" class="small">观察 / 候选 / 持有</text>
+
+    <rect x="595" y="110" width="145" height="70" rx="8" class="frontend"/>
+    <text x="617" y="140" class="label">投资规则</text>
+    <text x="611" y="160" class="small">仓位上限 / 纪律</text>
+
+    <rect x="770" y="110" width="145" height="70" rx="8" class="external"/>
+    <text x="792" y="140" class="label">市场数据</text>
+    <text x="790" y="160" class="small">指数 / 波动 / 宽度</text>
+
+    <rect x="945" y="110" width="185" height="70" rx="8" class="external"/>
+    <text x="965" y="140" class="label">投资知识库</text>
+    <text x="963" y="160" class="small">NotebookLM / Obsidian</text>
+
+    <!-- data store -->
+    <rect x="455" y="225" width="330" height="54" rx="8" class="db"/>
+    <text x="505" y="248" class="label">结构化投资数据库</text>
+    <text x="485" y="266" class="small">Holdings / StockAnalysis / Rules / TradeLog</text>
+
+    <!-- arrows to db -->
+    <path class="line" d="M142 180 C180 225 360 245 455 250"/>
+    <path class="line" d="M318 180 C350 220 410 240 455 248"/>
+    <path class="line" d="M492 180 C500 202 515 214 540 225"/>
+    <path class="line" d="M668 180 C660 202 648 214 630 225"/>
+    <path class="line" d="M842 180 C805 214 795 230 785 248"/>
+    <path class="line2" d="M1038 180 C980 235 890 252 785 252"/>
+
+    <!-- agents -->
+    <rect x="65" y="320" width="175" height="75" rx="8" class="backend"/>
+    <text x="88" y="350" class="label">Portfolio State</text>
+    <text x="96" y="370" class="small">整理组合状态</text>
+
+    <rect x="265" y="320" width="175" height="75" rx="8" class="backend"/>
+    <text x="291" y="350" class="label">Fundamental</text>
+    <text x="296" y="370" class="small">个股基本面评分</text>
+
+    <rect x="465" y="320" width="175" height="75" rx="8" class="backend"/>
+    <text x="490" y="350" class="label">Sector Exposure</text>
+    <text x="502" y="370" class="small">行业/主题集中度</text>
+
+    <rect x="665" y="320" width="175" height="75" rx="8" class="backend"/>
+    <text x="691" y="350" class="label">Market Regime</text>
+    <text x="704" y="370" class="small">市场状态识别</text>
+
+    <rect x="865" y="320" width="175" height="75" rx="8" class="backend"/>
+    <text x="890" y="350" class="label">Behavior Coach</text>
+    <text x="902" y="370" class="small">操作行为复盘</text>
+
+    <rect x="565" y="425" width="175" height="65" rx="8" class="cloud"/>
+    <text x="590" y="452" class="label">Knowledge Agent</text>
+    <text x="594" y="470" class="small">投资原则与引用</text>
+
+    <!-- db to agents -->
+    <path class="line" d="M500 279 C410 300 250 305 150 320"/>
+    <path class="line" d="M560 279 C505 300 420 305 355 320"/>
+    <path class="line" d="M620 279 C604 300 580 305 552 320"/>
+    <path class="line" d="M690 279 C715 300 735 305 752 320"/>
+    <path class="line" d="M740 279 C805 300 890 305 950 320"/>
+    <path class="line2" d="M1038 180 C995 280 800 410 740 450"/>
+
+    <!-- optimizer and risk/report -->
+    <rect x="230" y="600" width="230" height="80" rx="8" class="bus"/>
+    <text x="270" y="632" class="label">Portfolio Optimizer</text>
+    <text x="266" y="654" class="small">生成目标仓位与调仓建议</text>
+
+    <rect x="510" y="600" width="210" height="80" rx="8" class="security"/>
+    <text x="552" y="632" class="label">Risk Control</text>
+    <text x="548" y="654" class="small">规则、集中度、纪律审核</text>
+
+    <rect x="770" y="600" width="210" height="80" rx="8" class="frontend"/>
+    <text x="823" y="632" class="label">Report Agent</text>
+    <text x="804" y="654" class="small">周报 / 调仓解释 / 风险提示</text>
+
+    <rect x="1030" y="600" width="135" height="80" rx="8" class="frontend"/>
+    <text x="1065" y="632" class="label">用户确认</text>
+    <text x="1053" y="654" class="small">执行 / 拒绝 / 修改</text>
+
+    <!-- agent to optimizer -->
+    <path class="line" d="M152 395 C180 505 250 560 305 600"/>
+    <path class="line" d="M352 395 C350 480 348 545 348 600"/>
+    <path class="line" d="M552 395 C505 500 430 555 390 600"/>
+    <path class="line" d="M752 395 C650 505 520 560 430 600"/>
+    <path class="line2" d="M652 490 C560 530 475 570 420 600"/>
+
+    <!-- behavior and KB to risk/report -->
+    <path class="line3" d="M952 395 C850 500 720 560 650 600"/>
+    <path class="line2" d="M675 490 C760 520 820 560 855 600"/>
+
+    <path class="line" d="M460 640 L510 640"/>
+    <path class="line" d="M720 640 L770 640"/>
+    <path class="line" d="M980 640 L1030 640"/>
+
+    <!-- feedback -->
+    <path class="line3" d="M615 600 C590 555 515 540 385 590"/>
+    <text x="522" y="552" class="tiny">风险不通过 → 回到优化器</text>
+
+    <!-- legend -->
+    <rect x="70" y="765" width="1100" height="55" rx="10" fill="#0f172a" stroke="#1e293b"/>
+    <circle cx="110" cy="793" r="7" fill="#22d3ee"/><text x="128" y="797" class="small">用户界面/输出</text>
+    <circle cx="260" cy="793" r="7" fill="#34d399"/><text x="278" y="797" class="small">分析 Agent</text>
+    <circle cx="410" cy="793" r="7" fill="#a78bfa"/><text x="428" y="797" class="small">结构化数据库</text>
+    <circle cx="585" cy="793" r="7" fill="#fb923c"/><text x="603" y="797" class="small">优化决策</text>
+    <circle cx="735" cy="793" r="7" fill="#fb7185"/><text x="753" y="797" class="small">风险审核/反馈</text>
+    <circle cx="925" cy="793" r="7" fill="#94a3b8"/><text x="943" y="797" class="small">外部数据/知识库</text>
+  </svg>
+  </div>
+  <div class="foot">MVP 原则：先建议，后确认；先复盘，后自动化；先规则，后模型。</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+ticker,name,asset_type,weight,sector,theme,risk_level
+SPY,SPDR S&P 500 ETF Trust,etf,0.3451,Index,US Large Cap,normal
+NOK,Nokia Oyj,stock,0.1704,Technology,Telecom Equipment,normal
+GOOGL,Alphabet Inc,stock,0.1342,Communication Services,AI/Advertising,normal
+ONDS,Ondas Holdings Inc,stock,0.0984,Technology,Drones/Industrial IoT,high
+MRVL,Marvell Technology Inc,stock,0.0664,Technology,Semiconductors/AI Infrastructure,normal
+MSFT,Microsoft Corp,stock,0.0502,Technology,AI/Cloud,normal
+TSM,Taiwan Semiconductor Manufacturing Co Ltd,stock,0.0487,Technology,Semiconductors/Foundry,normal
+HPQ,HP Inc,stock,0.0419,Technology,PCs/Printing,normal
+CASH,Cash,cash,0.0444,,,normal

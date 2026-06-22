@@ -1,0 +1,205 @@
+tickers:
+  SPY:
+    name: SPDR S&P 500 ETF Trust
+    asset_type: etf
+    sector: Index
+    theme: US Large Cap
+    risk_level: normal
+  QQQ:
+    name: Invesco QQQ Trust
+    asset_type: etf
+    sector: Index
+    theme: US Growth/Technology
+    risk_level: normal
+  IBIT:
+    name: iShares Bitcoin Trust ETF
+    asset_type: etf
+    sector: Crypto
+    theme: Bitcoin
+    risk_level: high
+  AAPL:
+    name: Apple Inc
+    asset_type: stock
+    sector: Technology
+    theme: Consumer Electronics/AI
+    risk_level: normal
+  TSLA:
+    name: Tesla Inc
+    asset_type: stock
+    sector: Consumer Discretionary
+    theme: EV/Autonomy
+    risk_level: high
+  NVDA:
+    name: NVIDIA Corp
+    asset_type: stock
+    sector: Technology
+    theme: AI/Semiconductors
+    risk_level: normal
+  MSFT:
+    name: Microsoft Corp
+    asset_type: stock
+    sector: Technology
+    theme: AI/Cloud
+    risk_level: normal
+  AMZN:
+    name: Amazon.com Inc
+    asset_type: stock
+    sector: Consumer Discretionary
+    theme: E-commerce/Cloud
+    risk_level: normal
+  GOOGL:
+    name: Alphabet Inc
+    asset_type: stock
+    sector: Communication Services
+    theme: AI/Advertising
+    risk_level: normal
+  META:
+    name: Meta Platforms Inc
+    asset_type: stock
+    sector: Communication Services
+    theme: AI/Social Media
+    risk_level: normal
+  ONDS:
+    name: Ondas Holdings Inc
+    asset_type: stock
+    sector: Technology
+    theme: Drones/Industrial IoT
+    risk_level: high
+  IREN:
+    name: IREN Ltd
+    asset_type: stock
+    sector: Technology
+    theme: Bitcoin Mining/AI Data Centers
+    risk_level: high
+  COHR:
+    name: Coherent Corp
+    asset_type: stock
+    sector: Technology
+    theme: Optical Components/Semiconductors
+    risk_level: normal
+  TSM:
+    name: Taiwan Semiconductor Manufacturing Co Ltd
+    asset_type: stock
+    sector: Technology
+    theme: Semiconductors/Foundry
+    risk_level: normal
+  INTC:
+    name: Intel Corp
+    asset_type: stock
+    sector: Technology
+    theme: Semiconductors
+    risk_level: normal
+  MU:
+    name: Micron Technology Inc
+    asset_type: stock
+    sector: Technology
+    theme: Memory Semiconductors/AI
+    risk_level: normal
+  FN:
+    name: Fabrinet
+    asset_type: stock
+    sector: Technology
+    theme: Optical Manufacturing
+    risk_level: normal
+  CLS:
+    name: Celestica Inc
+    asset_type: stock
+    sector: Technology
+    theme: Electronics Manufacturing/AI Infrastructure
+    risk_level: normal
+  SMCI:
+    name: Super Micro Computer Inc
+    asset_type: stock
+    sector: Technology
+    theme: AI Servers/Data Centers
+    risk_level: high
+  NOK:
+    name: Nokia Oyj
+    asset_type: stock
+    sector: Technology
+    theme: Telecom Equipment
+    risk_level: normal
+  HPQ:
+    name: HP Inc
+    asset_type: stock
+    sector: Technology
+    theme: PCs/Printing
+    risk_level: normal
+  MDB:
+    name: MongoDB Inc
+    asset_type: stock
+    sector: Technology
+    theme: Database/Cloud Software
+    risk_level: normal
+  MRVL:
+    name: Marvell Technology Inc
+    asset_type: stock
+    sector: Technology
+    theme: Semiconductors/AI Infrastructure
+    risk_level: normal
+  ACMR:
+    name: ACM Research Inc
+    asset_type: stock
+    sector: Technology
+    theme: Semiconductor Equipment
+    risk_level: high
+  HIMX:
+    name: Himax Technologies Inc
+    asset_type: stock
+    sector: Technology
+    theme: Display Semiconductors
+    risk_level: high
+  LPTH:
+    name: LightPath Technologies Inc
+    asset_type: stock
+    sector: Technology
+    theme: Optical Components
+    risk_level: high
+  OUST:
+    name: Ouster Inc
+    asset_type: stock
+    sector: Technology
+    theme: LiDAR/Autonomous Systems
+    risk_level: high
+  MDT:
+    name: Medtronic plc
+    asset_type: stock
+    sector: Healthcare
+    theme: Medical Devices
+    risk_level: normal
+  SNDK:
+    name: SanDisk Corp
+    asset_type: stock
+    sector: Technology
+    theme: Data Storage/Memory
+    risk_level: normal
+  EWY:
+    name: iShares MSCI South Korea ETF
+    asset_type: etf
+    sector: Index
+    theme: South Korea Equities
+    risk_level: normal
+  SOXX:
+    name: iShares Semiconductor ETF
+    asset_type: etf
+    sector: Index
+    theme: Semiconductors
+    risk_level: normal
+  SOXL:
+    name: Direxion Daily Semiconductor Bull 3X Shares
+    asset_type: etf
+    sector: Index
+    theme: Leveraged Semiconductors
+    risk_level: high
+  OKLO:
+    name: Oklo Inc
+    asset_type: stock
+    sector: Utilities
+    theme: Nuclear Energy/Small Modular Reactors
+    risk_level: high
+  CASH:
+    name: Cash
+    asset_type: cash
+    sector:
+    theme:
+    risk_level: normal

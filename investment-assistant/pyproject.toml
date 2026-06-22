@@ -1,0 +1,27 @@
+[project]
+name = "investment-assistant"
+version = "0.1.0"
+description = "Local-first MVP for portfolio rules diagnostics"
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic>=2.0",
+  "pandas>=2.0",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+investment-assistant = "investment_assistant.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/investment_assistant"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

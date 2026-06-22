@@ -1,0 +1,18 @@
+portfolio_rules:
+  target_index_weight:
+    neutral: [0.30, 0.50]
+    risk_off: [0.40, 0.50]
+    risk_on: [0.30, 0.40]
+  max_stock_weight: 0.70
+  max_single_stock_weight: 0.25
+  max_high_risk_single_stock_weight: 0.10
+  max_sector_weight: 0.40
+  max_theme_weight: 0.40
+  min_cash_weight: 0.00
+  max_turnover_per_rebalance: 0.15
+  review_frequency: weekly
+  stock_score_thresholds:
+    add_candidate: 75
+    hold: 60
+    reduce: 45
+    remove: 35

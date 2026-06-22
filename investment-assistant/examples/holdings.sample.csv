@@ -1,0 +1,4 @@
+ticker,name,asset_type,weight,sector,theme,risk_level
+VOO,Vanguard S&P 500 ETF,etf,0.30,Index,US Large Cap,normal
+AAPL,Apple Inc,stock,0.10,Technology,AI/Consumer,normal
+CASH,Cash,cash,0.05,,,normal
